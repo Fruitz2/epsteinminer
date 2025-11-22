@@ -1,0 +1,103 @@
+/* PumpFun Style Theme */
+:root {
+  --pump-green: #00D632;
+  --pump-dark: #1A1A1A;
+  --pump-darker: #0F0F0F;
+  --pump-light: #2A2A2A;
+  --pump-text: #E0E0E0;
+  --pump-accent: #00FF41;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--pump-darker);
+  color: var(--pump-text);
+}
+
+.custom-container {
+  background: linear-gradient(180deg, #1A1A1A 0%, #0F0F0F 100%);
+  border: 1px solid #2A2A2A;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 214, 50, 0.1);
+}
+
+.btn-buy, .btn-primary {
+  background: linear-gradient(135deg, #00D632 0%, #00FF41 100%);
+  color: #000;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  padding: 12px 24px;
+}
+
+.btn-buy:hover, .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(0, 214, 50, 0.4);
+  background: linear-gradient(135deg, #00FF41 0%, #00D632 100%);
+}
+
+.btn-hatch {
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  color: #000;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  transition: all 0.3s ease;
+}
+
+.btn-hatch:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(255, 215, 0, 0.3);
+}
+
+.btn-sell {
+  background: linear-gradient(135deg, #FF4444 0%, #CC0000 100%);
+  color: #FFF;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  transition: all 0.3s ease;
+}
+
+.btn-sell:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(255, 68, 68, 0.3);
+}
+
+.panel {
+  background: rgba(26, 26, 26, 0.8);
+  border: 1px solid #00D632;
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+}
+
+.banner {
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #1A1A1A 0%, #2A2A2A 100%);
+  border-radius: 12px;
+  border: 1px solid #00D632;
+  margin-bottom: 30px;
+}
+
+.daily, .apr {
+  color: #00D632;
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(0, 214, 50, 0.5);
+}
+
+.title {
+  margin-top: 20px;
+}
+
+.footer {
+  margin-top: 40px;
+  padding: 40px 20px;
+  background: linear-gradient(180deg, #0F0F0F 0%, #1A1A1A 100%);
+  border-top: 2px solid #00D632;
+}
