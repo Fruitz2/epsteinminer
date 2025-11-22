@@ -8,15 +8,17 @@ import StatsGrid from '@/components/StatsGrid'
 import PoolInfo from '@/components/PoolInfo'
 import ActivityFeed from '@/components/ActivityFeed'
 
-// Solana wallet integration placeholder
+// Solana wallet integration
+interface PhantomProvider {
+  isPhantom?: boolean
+  connect: () => Promise<{ publicKey: { toString: () => string } }>
+  disconnect: () => Promise<void>
+  publicKey?: { toString: () => string }
+}
+
 declare global {
   interface Window {
-    solana?: {
-      isPhantom?: boolean
-      connect: () => Promise<{ publicKey: { toString: () => string } }>
-      disconnect: () => Promise<void>
-      publicKey?: { toString: () => string }
-    }
+    solana?: PhantomProvider
   }
 }
 
