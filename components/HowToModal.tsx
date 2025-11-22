@@ -21,7 +21,7 @@ export default function HowToModal({ onClose }: HowToModalProps) {
               <p>B. Enter the $EPST amount to Hire Elite Miners.</p>
               <p>C. Click Hire miners.</p>
               <p>D. Compound Daily to hire more miners to increase your profit.</p>
-              <p>E. Withdraw Profit using the "Pocket Your SOL" button (pays SOL, not $EPST).</p>
+              <p>E. Withdraw Profit using the &quot;Pocket Your SOL&quot; button (pays SOL, not $EPST).</p>
             </div>
             
             <h3 className="text-xl font-bold text-[#00D632] pt-4">
@@ -33,7 +33,7 @@ export default function HowToModal({ onClose }: HowToModalProps) {
               <p>EPSTEINMINER is subject to high risk. Please make your investment cautiously. EpsteinMiner will not be responsible for your investment losses.</p>
               <p className="mt-2">Crypto markets and Blockchain technology are high risk!</p>
               <p>Always do your own due diligence</p>
-              <h3 className="text-lg font-bold mt-2">Don't invest more than you can afford to lose!</h3>
+              <h3 className="text-lg font-bold mt-2">Don&apos;t invest more than you can afford to lose!</h3>
               <p className="mt-4">Thanks for your support!</p>
               <p>EpsteinMiner Team</p>
             </div>
