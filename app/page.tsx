@@ -8,22 +8,7 @@ import StatsGrid from '@/components/StatsGrid'
 import PoolInfo from '@/components/PoolInfo'
 import ActivityFeed from '@/components/ActivityFeed'
 
-// Solana wallet integration
-interface PhantomProvider {
-  isPhantom?: boolean
-  connect: () => Promise<{ publicKey: { toString: () => string } }>
-  disconnect: () => Promise<void>
-  publicKey?: { toString: () => string }
-  signTransaction?: (transaction: any) => Promise<any>
-  signAllTransactions?: (transactions: any[]) => Promise<any[]>
-  signMessage?: (message: Uint8Array) => Promise<{ signature: Uint8Array }>
-}
-
-declare global {
-  interface Window {
-    solana?: PhantomProvider
-  }
-}
+// Phantom wallet type (no global declaration to avoid conflicts)
 
 interface Transaction {
   id: string
@@ -79,9 +64,11 @@ export default function Home() {
   const connectWallet = async () => {
     if (typeof window === 'undefined') return
     
-    if (window.solana?.isPhantom) {
+    const solana = (window as any).solana
+    
+    if (solana?.isPhantom) {
       try {
-        const response = await window.solana.connect()
+        const response = await solana.connect()
         const pubKey = response.publicKey.toString()
         setConnected(true)
         setAddress(pubKey)
