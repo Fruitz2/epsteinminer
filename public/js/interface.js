@@ -1,5 +1,5 @@
-var minersAddr = 'EPSTEINminerxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'; // Solana Program ID
-var tokenAddr = 'EPSTEINtokenxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'; // Solana Token Address
+var minersAddr = 'EPSTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'; // Solana Program ID - PLACEHOLDER
+var tokenAddr = 'EPSTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'; // Solana SPL Token Address - PLACEHOLDER
 var minersAbi =
 [
 	{

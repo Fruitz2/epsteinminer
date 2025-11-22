@@ -6,7 +6,7 @@ const { Connection, PublicKey, Transaction, SystemProgram, LAMPORTS_PER_SOL } = 
 
 // Configuration
 const SOLANA_RPC = 'https://api.mainnet-beta.solana.com';
-const PROGRAM_ID = 'EPSTEINminerxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'; // Replace with actual program ID
+const PROGRAM_ID = 'EPSTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'; // Replace with actual program ID
 const TOKEN_MINT = 'EPSTEINtokenxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'; // Replace with actual token mint
 
 let connection;

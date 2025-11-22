@@ -30,7 +30,7 @@ export default function Footer({ onOpenModal }: FooterProps) {
             <p className="text-gray-400">
               The EpsteinMiner contract is public, verified and can be viewed here on{' '}
               <a 
-                href="https://solscan.io/account/EPSTEINminerxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" 
+                href="https://solscan.io/account/EPSTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#00D632] underline"
@@ -78,7 +78,7 @@ export default function Footer({ onOpenModal }: FooterProps) {
             <a href="https://t.me/epsteinminer" target="_blank" rel="noopener noreferrer">
               <Image src="/images/telegram.svg" alt="Telegram" width={30} height={30} />
             </a>
-            <a href="https://solscan.io/account/EPSTEINminerxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" target="_blank" rel="noopener noreferrer">
+            <a href="https://solscan.io/account/EPSTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" target="_blank" rel="noopener noreferrer">
               <Image src="/images/solscan_logo.png" alt="Solscan" width={30} height={30} />
             </a>
           </div>
