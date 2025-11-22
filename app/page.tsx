@@ -7,6 +7,7 @@ import MinerStats from '@/components/MinerStats'
 import MiningControls from '@/components/MiningControls'
 import Footer from '@/components/Footer'
 import HowToModal from '@/components/HowToModal'
+import ComingSoonOverlay from '@/components/ComingSoonOverlay'
 
 export default function Home() {
   const [miners, setMiners] = useState(0)
@@ -15,6 +16,7 @@ export default function Home() {
   const [walletBalance, setWalletBalance] = useState(0)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [walletConnected, setWalletConnected] = useState(false)
+  const [dappLive, setDappLive] = useState(false) // Set to true when contract deployed
 
   useEffect(() => {
     // Check for Phantom wallet
@@ -60,6 +62,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen relative">
+      {!dappLive && <ComingSoonOverlay />}
       <Header onConnect={connectWallet} connected={walletConnected} />
       
       <main className="container mx-auto max-w-3xl px-4 pt-20">

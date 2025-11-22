@@ -45,7 +45,7 @@ export default function Footer({ onOpenModal }: FooterProps) {
             <p className="text-gray-400 mb-4">
               EpsteinMiner pays 8% daily, according to the current mining efficiency rate. The mining
               efficiency rate rises and falls as you and other players hire miners, compound earnings
-              and pocket EPSTEIN.
+              and pocket $EPST tokens. All rewards are paid in SOL on Solana blockchain.
             </p>
             <p className="text-gray-400">
               The object of the game is hiring more miners, sooner and more often than other players.

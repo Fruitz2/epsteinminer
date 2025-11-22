@@ -10,17 +10,17 @@ export default function Header({ onConnect, connected }: HeaderProps) {
     <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-[#1A1A1A]/95 to-transparent">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <Image src="/images/bnb_logo.png" alt="EPST" width={40} height={40} className="rounded-full" />
+          <Image src="/images/logo.png" alt="EPST" width={40} height={40} className="rounded-full" />
           <span className="text-xl font-bold bg-gradient-to-r from-[#00D632] to-[#00FF41] bg-clip-text text-transparent">
             $EPST MINER
           </span>
         </div>
         
         <nav className="hidden md:flex items-center gap-6">
-          <a href="#story" className="text-gray-400 hover:text-[#00D632] transition-colors">Legend</a>
-          <a href="#token" className="text-gray-400 hover:text-[#00D632] transition-colors">Token</a>
-          <a href="#how" className="text-gray-400 hover:text-[#00D632] transition-colors">How to Buy</a>
-          <a href="#roadmap" className="text-gray-400 hover:text-[#00D632] transition-colors">Roadmap</a>
+          <a href="#about" className="text-gray-400 hover:text-[#00D632] transition-colors">About</a>
+          <a href="#stats" className="text-gray-400 hover:text-[#00D632] transition-colors">Stats</a>
+          <a href="#mining" className="text-gray-400 hover:text-[#00D632] transition-colors">Mining</a>
+          <a href="https://pump.fun" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#00D632] transition-colors">Buy $EPST</a>
         </nav>
         
         <div className="flex items-center gap-4">
