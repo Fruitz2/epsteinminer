@@ -1,34 +1,35 @@
-import type { Metadata } from 'next'
-import './globals.css'
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals-new.css";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'EpsteinMiner | Elite Island Mining Operation',
-  description: 'Elite Island Mining Operation - Solana dApp with 8% Daily APR. Stake $EPST, earn SOL.',
-  keywords: 'Epstein, miner, Solana, crypto, $EPST, mining, DeFi',
+  title: "EpsteinMiner - Elite Solana Staking",
+  description: "Stake $EPST tokens and earn SOL rewards with 8% daily APY on Solana blockchain",
+  keywords: ["solana", "staking", "defi", "epst", "crypto", "blockchain"],
   openGraph: {
-    title: 'EpsteinMiner - 8% Daily APR',
-    description: 'Hire Elite Miners to earn SOL on Solana',
-    type: 'website',
+    title: "EpsteinMiner - Elite Solana Staking",
+    description: "Stake $EPST tokens and earn SOL rewards with 8% daily APY",
+    type: "website",
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'EpsteinMiner - 8% Daily APR',
-    description: 'Hire Elite Miners to earn SOL on Solana',
+    card: "summary_large_image",
+    title: "EpsteinMiner - Elite Solana Staking",
+    description: "Stake $EPST tokens and earn SOL rewards with 8% daily APY",
   },
-}
+};
 
 export default function RootLayout({
   children,
-}: {
-  children: React.ReactNode
-}) {
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <html lang="en">
-      <head>
-        <link rel="icon" href="/images/icon/favicon.png" />
-        <meta name="theme-color" content="#00D632" />
-      </head>
-      <body>{children}</body>
+    <html lang="en" className="scroll-smooth">
+      <body className={inter.className}>
+        {children}
+      </body>
     </html>
-  )
+  );
 }

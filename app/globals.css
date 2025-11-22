@@ -2,42 +2,217 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap');
-
-:root {
-  --pump-green: #00D632;
-  --pump-dark: #1A1A1A;
-  --pump-darker: #0F0F0F;
-  --pump-light: #2A2A2A;
-  --pump-text: #E0E0E0;
-  --pump-accent: #00FF41;
-}
+/* Import Inter and JetBrains Mono fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
 @layer base {
+  * {
+    @apply border-border;
+  }
+  
   body {
-    @apply bg-gradient-to-b from-[#1A1A1A] to-[#0F0F0F] text-[#E0E0E0] min-h-screen;
+    @apply bg-background text-text-primary;
     font-family: 'Inter', sans-serif;
+  }
+  
+  html {
+    scroll-behavior: smooth;
   }
 }
 
 @layer components {
+  /* Glassmorphic Card */
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-glass border border-border rounded-2xl;
+    @apply shadow-card transition-all duration-300;
+  }
+  
+  .glass-card:hover {
+    @apply border-border-hover shadow-glow;
+    transform: translateY(-2px);
+  }
+  
+  /* Primary Button */
   .btn-primary {
-    @apply bg-gradient-to-r from-[#00D632] to-[#00FF41] text-black font-bold py-3 px-8 rounded-lg uppercase tracking-wider transition-all duration-300 hover:scale-105 hover:shadow-[0_5px_20px_rgba(0,214,50,0.4)];
+    @apply bg-gradient-primary text-background font-bold px-6 py-3 rounded-xl;
+    @apply shadow-glow-sm hover:shadow-glow transition-all duration-300;
+    @apply hover:scale-105 active:scale-95;
   }
-
-  .btn-hatch {
-    @apply bg-gradient-to-r from-yellow-400 to-orange-500 text-black font-semibold py-3 px-8 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-[0_5px_20px_rgba(255,215,0,0.3)];
+  
+  .btn-primary:disabled {
+    @apply opacity-50 cursor-not-allowed hover:scale-100;
   }
-
-  .btn-sell {
-    @apply bg-gradient-to-r from-red-500 to-red-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-[0_5px_20px_rgba(255,68,68,0.3)];
+  
+  /* Secondary Button */
+  .btn-secondary {
+    @apply bg-background-card text-primary border border-primary/30 font-medium px-6 py-3 rounded-xl;
+    @apply hover:bg-primary/10 hover:border-primary transition-all duration-300;
   }
-
-  .panel {
-    @apply bg-[#1A1A1A]/80 border border-[#00D632] rounded-lg p-6 backdrop-blur-sm;
+  
+  /* Ghost Button */
+  .btn-ghost {
+    @apply text-text-secondary hover:text-primary font-medium px-4 py-2 rounded-lg;
+    @apply hover:bg-primary/10 transition-all duration-200;
   }
-
+  
+  /* Input Field */
   .input-field {
-    @apply bg-transparent border-2 border-[#00D632]/50 text-[#00D632] text-xl font-semibold py-3 px-4 rounded-lg focus:border-[#00D632] focus:outline-none;
+    @apply bg-background-surface border border-border rounded-xl px-4 py-3;
+    @apply text-text-primary placeholder:text-text-muted;
+    @apply focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all;
+    @apply outline-none;
+  }
+  
+  /* Stat Card */
+  .stat-card {
+    @apply glass-card p-6;
+  }
+  
+  /* Gradient Text */
+  .text-gradient {
+    @apply bg-gradient-primary bg-clip-text text-transparent;
+  }
+  
+  /* Animated Border */
+  .animated-border {
+    position: relative;
+  }
+  
+  .animated-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 1rem;
+    padding: 2px;
+    background: linear-gradient(135deg, #00FF41, #00D632, #00FF41);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+  
+  @keyframes gradient-shift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+  
+  /* Shimmer Effect */
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(0, 255, 65, 0.1) 50%,
+      transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s linear infinite;
+  }
+  
+  /* Glow Effect */
+  .glow-effect {
+    position: relative;
+  }
+  
+  .glow-effect::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 255, 65, 0.3) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    border-radius: inherit;
+  }
+  
+  .glow-effect:hover::after {
+    opacity: 1;
+  }
+  
+  /* Number Counter Animation */
+  .number-counter {
+    font-variant-numeric: tabular-nums;
+    @apply font-mono;
+  }
+  
+  /* Loading Skeleton */
+  .skeleton {
+    @apply bg-background-card animate-pulse rounded;
+  }
+  
+  /* Scrollbar Styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-background-surface;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-background-elevated rounded-full;
+    @apply hover:bg-primary/30;
+  }
+  
+  /* Selection */
+  ::selection {
+    @apply bg-primary/30 text-text-primary;
+  }
+}
+
+@layer utilities {
+  /* Custom utilities */
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* Gradient mesh background */
+  .gradient-mesh {
+    background: 
+      radial-gradient(at 0% 0%, rgba(0, 255, 65, 0.1) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(0, 214, 50, 0.08) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, rgba(0, 255, 65, 0.05) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, rgba(0, 214, 50, 0.08) 0px, transparent 50%);
+  }
+  
+  /* Glass effect */
+  .glass-effect {
+    background: rgba(42, 42, 42, 0.4);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+  }
+}
+
+/* Custom animations for specific components */
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
