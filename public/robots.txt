@@ -1,0 +1,10 @@
+# Robots.txt for EpsteinMiner
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://islandminer.vercel.app/sitemap.xml
+
+# Crawl-delay (optional, for rate limiting)
+Crawl-delay: 1

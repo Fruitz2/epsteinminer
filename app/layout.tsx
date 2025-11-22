@@ -5,19 +5,78 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "EpsteinMiner - Elite Solana Staking",
-  description: "Stake $EPST tokens and earn SOL rewards with 8% daily APY on Solana blockchain",
-  keywords: ["solana", "staking", "defi", "epst", "crypto", "blockchain"],
+  metadataBase: new URL('https://islandminer.vercel.app'),
+  title: "EpsteinMiner - Elite Solana Staking | $EPST",
+  description: "Stake $EPST tokens and earn SOL rewards with 8% APY. Join the elite island mining protocol on Solana blockchain. No lock-up period, withdraw anytime.",
+  keywords: ["solana", "staking", "defi", "epst", "epstein miner", "crypto", "blockchain", "sol rewards", "staking rewards", "passive income"],
+  authors: [{ name: "EpsteinMiner Team" }],
+  creator: "EpsteinMiner",
+  publisher: "EpsteinMiner",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   openGraph: {
-    title: "EpsteinMiner - Elite Solana Staking",
-    description: "Stake $EPST tokens and earn SOL rewards with 8% daily APY",
+    title: "EpsteinMiner - Elite Solana Staking | Earn 8% APY",
+    description: "Stake $EPST tokens and earn SOL rewards daily. Join the most exclusive staking protocol on Solana. No lock-up period, glassmorphic UI.",
+    url: "https://islandminer.vercel.app",
+    siteName: "EpsteinMiner",
     type: "website",
+    locale: "en_US",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "EpsteinMiner - Elite Solana Staking Protocol",
+      }
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "EpsteinMiner - Elite Solana Staking",
-    description: "Stake $EPST tokens and earn SOL rewards with 8% daily APY",
+    title: "EpsteinMiner - Elite Solana Staking | $EPST",
+    description: "Stake $EPST, earn SOL rewards with 8% APY. The most exclusive staking protocol on Solana.",
+    images: ["/og-image.png"],
+    creator: "@epsteinminer",
+    site: "@epsteinminer",
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
+    other: [
+      {
+        rel: "mask-icon",
+        url: "/safari-pinned-tab.svg",
+      },
+    ],
+  },
+  manifest: "/site.webmanifest",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#00FF41" },
+    { media: "(prefers-color-scheme: dark)", color: "#0A0A0A" },
+  ],
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 5,
+  },
+  category: "finance",
 };
 
 export default function RootLayout({
