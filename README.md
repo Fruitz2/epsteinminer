@@ -89,6 +89,26 @@ Everything on the page that looks interactive actually works. Nothing is stubbed
 - A classification status dot pulses in the top left.
 - There is an undocumented easter egg accessible by entering the Konami code on a keyboard.
 
+## EPSTEINMINER REPOSITORY STATUS
+
+## Current Situation
+- This repository is NOT connected to any Vercel project
+- islandminer repository is connected to epsteinminer.xyz domain  
+- epsteinminer.xyz domain is pointing to islandminer repo
+
+## Content Status
+Both repositories have been updated with palm beach pete content.
+
+## Deployment Status
+- islandminer: ✅ Updated with palm beach pete content (latest commit c435b35)
+- epsteinminer: ❌ Not connected to any Vercel project
+
+## Issue Analysis
+The problem is that epsteinminer.xyz domain is connected to the islandminer repository, not this epsteinminer repository. This is correct - the domain should show the palm beach pete content from islandminer.
+
+## Solution
+The epsteinminer repository is redundant. The islandminer repository is the one actually serving epsteinminer.xyz.
+
 ## On the subject
 
 The site is a satirical case file referencing Palm Beach Pete, a Florida resident who went viral in March 2026 for a perceived resemblance to a deceased financier. Pete, whose real name is Peter Simel, has commercialized his own likeness through the @not_jeffepstein handle, follow up videos, and appearances on Jimmy Kimmel Live, NewsNation, and CBS 12. The Bureau has elected to believe him, with all the suspicious enthusiasm that phrase implies.
