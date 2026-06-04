@@ -40,6 +40,13 @@ DISTRIBUTOR_SOL_RESERVE
 MIN_REWARD_SOL
 ```
 
+For Vercel, do not use `.keys/admin.json` or `.keys/distributor.json` as env values. Those paths only work locally. Use the base58 private keys from `~/Desktop/epstein private keys.txt` for:
+
+```bash
+DISTRIBUTOR_PRIVATE_KEY
+ADMIN_PRIVATE_KEY
+```
+
 5. Manually send claimed Pump.fun creator-fee SOL to the distributor wallet.
 6. The hourly Vercel cron calls `/api/cron/distribute` and funds the reward vault.
 
