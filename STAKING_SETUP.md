@@ -34,18 +34,18 @@ HELIUS_API_KEY
 HELIUS_RPC_URL
 BIRDEYE_API_KEY
 DISTRIBUTOR_PRIVATE_KEY
-ADMIN_PRIVATE_KEY
 CRON_SECRET
 DISTRIBUTOR_SOL_RESERVE
 MIN_REWARD_SOL
 ```
 
-For Vercel, do not use `.keys/admin.json` or `.keys/distributor.json` as env values. Those paths only work locally. Use the base58 private keys from `~/Desktop/epstein private keys.txt` for:
+For Vercel, do not use `.keys/distributor.json` as the env value. That path only works locally. Use the base58 private key from `~/Desktop/epstein private keys.txt` for:
 
 ```bash
 DISTRIBUTOR_PRIVATE_KEY
-ADMIN_PRIVATE_KEY
 ```
+
+Keep `ADMIN_PRIVATE_KEY` local unless you intentionally add an admin-only recovery endpoint later. The current deployed app does not need it.
 
 5. Manually send claimed Pump.fun creator-fee SOL to the distributor wallet.
 6. The hourly Vercel cron calls `/api/cron/distribute` and funds the reward vault.
