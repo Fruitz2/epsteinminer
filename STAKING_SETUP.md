@@ -48,9 +48,16 @@ DISTRIBUTOR_PRIVATE_KEY
 Keep `ADMIN_PRIVATE_KEY` local unless you intentionally add an admin-only recovery endpoint later. The current deployed app does not need it.
 
 5. Manually send claimed Pump.fun creator-fee SOL to the distributor wallet.
-6. The hourly Vercel cron calls `/api/cron/distribute` and funds the reward vault.
+6. GitHub Actions calls `/api/cron/distribute` every hour and funds the reward vault.
 
-Vercel hourly cron requires a plan that supports hourly schedules. If the project is on Hobby, run this manually until upgraded:
+Vercel only hosts the website and API endpoint. The hourly scheduler lives in `.github/workflows/hourly-distribute.yml`, so the project does not need Vercel Cron or Render. GitHub Actions needs these repository secrets:
+
+```bash
+CRON_SECRET
+DISTRIBUTE_URL
+```
+
+If the scheduler is disabled or you want to fund manually, run:
 
 ```bash
 npm run staking:fund -- 0.1

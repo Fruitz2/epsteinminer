@@ -3,11 +3,5 @@
   "buildCommand": "echo 'Static site - no build needed'",
   "outputDirectory": "./",
   "installCommand": "npm install",
-  "devCommand": "npx serve . -l $PORT",
-  "crons": [
-    {
-      "path": "/api/cron/distribute",
-      "schedule": "0 * * * *"
-    }
-  ]
+  "devCommand": "npx serve . -l $PORT"
 }
