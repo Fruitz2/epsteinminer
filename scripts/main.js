@@ -13,7 +13,6 @@
   var daysEl = document.getElementById('days-counter');
   var precEl = document.getElementById('precision');
   var hasAnimated = false;
-  var lastDays = 0;
 
   function getElapsed() {
     var now = new Date();
@@ -32,7 +31,6 @@
     if (precEl) precEl.textContent = pad(e.h) + ':' + pad(e.m) + ':' + pad(e.s);
     if (daysEl && hasAnimated) {
       daysEl.textContent = pad(e.days, 4);
-      lastDays = e.days;
     }
   }
 
@@ -67,6 +65,7 @@
   renderClock();
   setInterval(renderClock, 1000);
 
+  /* AUDIO FAB */
   var fab = document.getElementById('audio-fab');
   var label = fab ? fab.querySelector('.audio-label') : null;
   var audioOn = false;
@@ -93,7 +92,6 @@
     var synthGain = new Tone.Gain(0.05).toDestination();
     synth.connect(synthFilter);
     synthFilter.connect(synthGain);
-
     synth.triggerAttack(['C2', 'G2', 'D#3']);
 
     pulse = new Tone.MembraneSynth({
@@ -105,19 +103,12 @@
     pulse.connect(pulseGain);
 
     var i = 0;
-    var pattern = [
-      ['C1', 1.4],
-      ['C1', 0.9],
-      ['G0', 0.7],
-      ['C1', 1.1]
-    ];
+    var pattern = [['C1', 1.4], ['C1', 0.9], ['G0', 0.7], ['C1', 1.1]];
 
     loopId = setInterval(function () {
       if (!audioOn) return;
       var note = pattern[i % pattern.length];
-      try {
-        pulse.triggerAttackRelease(note[0], '32n');
-      } catch (e) {}
+      try { pulse.triggerAttackRelease(note[0], '32n'); } catch (e) {}
       i++;
     }, 1500);
 

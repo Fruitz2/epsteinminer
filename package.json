@@ -3,12 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "npx serve .",
+    "dev:vercel": "vercel dev --yes --listen 127.0.0.1:3005",
+    "dev:next": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "serve": "npx serve .",
+    "setup:env": "node scripts/setup-local-env.js",
+    "wallets:generate": "node scripts/generate-wallets.js",
+    "staking:init": "node scripts/init-staking.js",
+    "staking:fund": "node scripts/fund-rewards.js",
+    "staking:sweep": "node scripts/sweep-unallocated.js"
   },
   "dependencies": {
+    "@solana/spl-token": "^0.4.14",
     "next": "14.2.33",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -16,7 +25,8 @@
     "postcss": "^8",
     "autoprefixer": "^10.0.1",
     "typescript": "^5",
-    "@solana/web3.js": "^1.87.6",
+    "@solana/web3.js": "^1.98.4",
+    "bs58": "^6.0.0",
     "lucide-react": "^0.294.0"
   },
   "devDependencies": {
@@ -24,6 +34,7 @@
     "eslint-config-next": "14.2.33",
     "@types/node": "^20",
     "@types/react": "^18",
-    "@types/react-dom": "^18"
+    "@types/react-dom": "^18",
+    "vercel": "^48.12.0"
   }
 }
